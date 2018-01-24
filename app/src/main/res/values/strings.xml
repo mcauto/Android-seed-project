@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Android-seed-project</string>
+    <string name="main_nav_first">main</string>
+    <string name="main_nav_second">setting</string>
 </resources>
