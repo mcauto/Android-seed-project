@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         initNavigationBar();
     }
     private void initPages() {
-        viewPagerAdapter.addFragment(new Fragment());
+        viewPagerAdapter.addFragment(SampleFragment.newInstance());
         viewPagerAdapter.addFragment(new Fragment());
     }
     private void initNavigationBar(){
