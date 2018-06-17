@@ -13,17 +13,17 @@ import kotlinx.android.synthetic.main.fragment_sample.*
 import kotlinx.android.synthetic.main.fragment_sample.view.*
 import kotlinx.android.synthetic.main.toolbar.view.*
 
-class SampleFragment : Fragment(){
-    fun newInstance(): SampleFragment {
-        return SampleFragment()
-    }
+class SampleFragment : Fragment() {
+  fun newInstance(): SampleFragment {
+    return SampleFragment()
+  }
 
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view = inflater!!.inflate(R.layout.fragment_sample, container, false)
-        if(Build.VERSION.SDK_INT >=21)
-            activity.window.statusBarColor = Color.BLACK
-        view.toolbar.title.text="hi"
-        activity.setActionBar(toolbar as Toolbar?)
-        return view
-    }
+  override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    val view = inflater!!.inflate(R.layout.fragment_sample, container, false)
+    if (Build.VERSION.SDK_INT >= 21)
+      activity.window.statusBarColor = Color.BLACK
+    view.toolbar.title.text = "hi"
+    activity.setActionBar(toolbar as Toolbar?)
+    return view
+  }
 }
