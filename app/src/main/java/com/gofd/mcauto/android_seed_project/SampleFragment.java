@@ -23,34 +23,35 @@ import com.mikepenz.ionicons_typeface_library.Ionicons;
  * Created by mcauto on 2017-09-03.
  */
 
-public class SampleFragment extends Fragment{
-    public SampleFragment(){
+public class SampleFragment extends Fragment {
+  public SampleFragment() {
 
+  }
+
+  public static SampleFragment newInstance() {
+    return new SampleFragment ();
+  }
+
+  @Nullable
+  @Override
+  public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    View view = inflater.inflate (R.layout.fragment_sample, container, false);
+    initToolbar (view);
+    return view;
+  }
+
+  private void initToolbar(View view) {
+    if(Build.VERSION.SDK_INT >= 21) {
+      // 21 버전 이상일 때
+      getActivity ().getWindow ().setStatusBarColor (Color.BLACK);
     }
-    public static SampleFragment newInstance(){
-        return new SampleFragment();
-    }
+    Toolbar toolbar = view.findViewById (R.id.toolbar);
+    toolbar.setTitle ("");
 
-    @Nullable
-    @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_sample,container,false);
-        initToolbar(view);
-        return view;
-    }
-    private void initToolbar(View view){
-        if (Build.VERSION.SDK_INT >= 21) {
-            // 21 버전 이상일 때
-            getActivity().getWindow().setStatusBarColor(Color.BLACK);
-        }
-        Toolbar toolbar = view.findViewById(R.id.toolbar);
-        toolbar.setTitle("");
+    ((AppCompatActivity) getActivity ()).setSupportActionBar (toolbar);
 
-        ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
-
-        TextView title = toolbar.findViewById(R.id.title);
-        title.setText("main");
-    }
-
+    TextView title = toolbar.findViewById (R.id.title);
+    title.setText ("main");
+  }
 }
 
