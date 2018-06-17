@@ -7,13 +7,13 @@
     android:background="#fff"
     android:orientation="vertical">
     <android.support.v4.view.ViewPager
-        android:id="@+id/vp_horizontal_ntb"
+        android:id="@+id/viewPager"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"/>
 
     <devlight.io.library.ntb.NavigationTabBar
-        android:id="@+id/ntb_horizontal"
+        android:id="@+id/navTab"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         app:ntb_badge_gravity="top"
